@@ -1,0 +1,59 @@
+<body>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <h3 style="color: black;">Send Mail To Our Client</h3>
+        <div class="form">
+          <form [formGroup]="regForm">
+            <input
+              type="text"
+              formControlName="toEmail"
+              name="email"
+              placeholder="TO:"
+              id="name"
+              autocomplete="off"
+            />
+            <input
+              type="email"
+              formControlName="fromEmail"
+              name="email"
+              placeholder="FROM"
+              id="email"
+              autocomplete="off"
+              disabled
+            />
+            <input
+              type="text"
+              formControlName="subject"
+              name="ans"
+              placeholder="Subject"
+              id="Subject"
+              autocomplete="off"
+            />
+            <textarea
+              id="message"
+              formControlName="textBody"
+              name="ans"
+              placeholder="Message"
+              cols="52.5"
+              rows="7"
+            ></textarea>
+
+            <div class="form-group col-12 flex-column d-flex">
+              <label style="color: black" class="form-control-label"
+                >Attachment :</label
+              >
+            </div>
+
+            <div class="col-md-2">
+              <input type="file" class="form-control"
+              (change)="onselectedFile1($event)" />
+            </div>
+
+            <button (click)="sendEmail()" id="btn" >Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

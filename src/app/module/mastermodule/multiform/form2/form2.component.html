@@ -1,0 +1,64 @@
+<div class="container mt-3">
+  <h3 style="text-align: center">Student Document</h3>
+  <div class="row justify-content-center">
+    <div class="col-8">
+      <form [formGroup]="stuDocForm" (ngSubmit)="saveStuDocuments()">
+        <div class="form-group">
+          <label for="formGroupExampleInput">Set Student ID</label>
+          <input
+            type="number"
+            class="form-control"
+            id="formGroupExampleInput"
+            placeholder="Set Student ID"
+            formControlName="studentId"
+          />
+        </div>
+
+        <div class="">
+          <label>Addmission id proof</label>
+          <input type="file" class="form-control"
+          (change)="onSelectedFileAdmissionIdProof($event)" />
+        </div>
+
+        <div class="">
+          <label>Marksheet</label>
+          <input type="file" class="form-control" 
+          (change)="onSelectedFileMarksheet($event)"/>
+        </div>
+
+        <div class="">
+          <label>Fees Structure</label>
+          <input type="file" class="form-control" 
+          (change)="onSelectedFileFeesStructure($event)"/>
+        </div>
+
+        <div class="">
+          <label style="color: red">*Pan Card</label>
+          <input type="file" class="form-control"
+          (change)="onSelectedFilePanCard($event)" />
+        </div>
+
+        <div class="">
+          <label style="color: red">*Aadhar Card</label>
+          <input type="file" class="form-control"
+          (change)="onSelectedFileAadharCard($event)" />
+        </div>
+
+        <div class="">
+          <label>Photo</label>
+          <input type="file" class="form-control"
+          (change)="onSelectedFilePhoto($event)" />
+        </div>
+
+        <div class="">
+          <label>Signature</label>
+          <input type="file" class="form-control"
+          (change)="onSelectedFileSignature($event)" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="button" class="btn btn-primary ml-4" (click)="clear()">Clear</button>
+      </form>
+    </div>
+  </div>
+</div>

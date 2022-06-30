@@ -1,0 +1,80 @@
+<div class="container mt-3">
+  <h3 style="text-align: center">Parent Bank Details</h3>
+  <div class="row justify-content-center">
+    <div class="col-8">
+      <form [formGroup]="parentBankDetailsRegistration">
+        <div class="form-group">
+          <label for="formGroupExampleInput">IFSC Code</label>
+          <input
+            type="text"
+            class="form-control"
+            id="formGroupExampleInput"
+            placeholder="IFSC Code of your Branch"
+            formControlName="ifscCode"
+            [(ngModel)]="parentBankDetailsForm.ifscCode"
+          />
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput">Bank Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="formGroupExampleInput"
+            placeholder="Bank Name"
+            formControlName="bankName"
+            [(ngModel)]="parentBankDetailsForm.bankName"
+          />
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput">Branch Details</label>
+          <input
+            type="text"
+            class="form-control"
+            id="formGroupExampleInput"
+            placeholder="Branch Details"
+            formControlName="branch"
+            [(ngModel)]="parentBankDetailsForm.branch"
+          />
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput">Account Type</label>
+          <input
+            type="text"
+            class="form-control"
+            id="formGroupExampleInput"
+            placeholder="Account Type"
+            
+            formControlName="accountType"
+            [(ngModel)]="parentBankDetailsForm.accountType"
+          />
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput">Account Number</label>
+          <input
+            type="text"
+            class="form-control"
+            id="formGroupExampleInput"
+            placeholder="Account Number"
+            formControlName="accountNo"
+            [(ngModel)]="parentBankDetailsForm.accountNo"
+            
+          />
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput">Liabillity Details</label>
+          <input
+            type="text"
+            class="form-control"
+            id="formGroupExampleInput"
+            placeholder="Liabillity Details"
+            
+            formControlName="liablityDetails"
+            [(ngModel)]="parentBankDetailsForm.liablityDetails"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="registerparentBankDetails()  ">Submit</button>
+        <button type="button" class="btn btn-primary ml-4" (click)="clear()">Clear</button>
+      </form>
+    </div>
+  </div>
+</div>

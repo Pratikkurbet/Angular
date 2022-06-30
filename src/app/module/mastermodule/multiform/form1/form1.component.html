@@ -1,0 +1,139 @@
+<div class="container mt-3">
+  <h3 style="text-align: center">Basic Student Details</h3>
+  <div class="row justify-content-center">
+    <div class="col-8">
+      <form [formGroup]="BasicStudentDetailsForm">
+        <div class="form-group">
+          <label for="formGroupExampleInput">First Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="formGroupExampleInput"
+            placeholder="First Name"
+            formControlName="firstName"
+            [(ngModel)]="StuDetails.firstName"
+          />
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput">Last Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="formGroupExampleInput"
+            placeholder="Last Name"
+            formControlName="lastName"
+            [(ngModel)]="StuDetails.lastName"
+          />
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput">DOB</label>
+          <input
+            type="date"
+            class="form-control"
+            id="formGroupExampleInput"
+            placeholder="Date of Birth"
+            formControlName="dateOfBirth"
+            [(ngModel)]="StuDetails.dateOfBirth"
+          />
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput">Marks Obtain</label>
+          <input
+            type="text"
+            class="form-control"
+            id="formGroupExampleInput"
+            placeholder="Marks"
+            formControlName="marksObtained"
+            [(ngModel)]="StuDetails.marksObtained"
+            
+          />
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput">Address</label>
+          <input
+            type="text"
+            class="form-control"
+            id="formGroupExampleInput"
+            placeholder="Address"
+            formControlName="address"
+            [(ngModel)]="StuDetails.address"
+          />
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput">Pan card Details</label>
+          <input
+            type="text"
+            class="form-control"
+            id="formGroupExampleInput"
+            placeholder="Pan No"
+            formControlName="panNo"
+            [(ngModel)]="StuDetails.panNo"
+          />
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput">Mobile No</label>
+          <input
+            type="number"
+            class="form-control"
+            id="formGroupExampleInput"
+            placeholder="Mobile No"
+            formControlName="mobNo"
+            [(ngModel)]="StuDetails.mobNo"
+          />
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput">Email Info</label>
+          <input
+            type="email"
+            class="form-control"
+            id="formGroupExampleInput"
+            placeholder=" Enter your Email"
+            formControlName="emailId"
+            [(ngModel)]="StuDetails.emailId"
+          />
+        </div>
+        <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
+        <div class="form-check ml-4">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="sex"
+            id="gridRadios1"
+            value="male"
+            checked
+            formControlName="sex"
+            [(ngModel)]="StuDetails.sex"
+          />
+          <label class="form-check-label" for="gridRadios1"> Male </label>
+        </div>
+        <div class="form-check ml-4">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="sex"
+            id="gridRadios2"
+            value="female"
+            formControlName="sex"
+            [(ngModel)]="StuDetails.sex"
+          />
+          <label class="form-check-label" for="gridRadios2"> Female </label>
+        </div>
+        <div class="form-check ml-4">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="sex"
+            id="gridRadios3"
+            value="other"
+            formControlName="sex"
+            [(ngModel)]="StuDetails.sex"
+          />
+          <label class="form-check-label" for="gridRadios3"> Other </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary" (click)="saveBasicStudentDetails()">Submit</button>
+        <button type="button" class="btn btn-primary ml-4" (click)="clear()">Clear</button>
+      </form>
+    </div>
+  </div>
+</div>

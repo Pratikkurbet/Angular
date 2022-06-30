@@ -1,0 +1,64 @@
+<div class="container mt-3">
+  <h3 style="text-align: center">Parent Document</h3>
+  <div class="row justify-content-center">
+    <div class="col-8">
+      <form [formGroup]="parentDocForm" (ngSubmit)="saveParentDocuments()">
+        <div class="form-group">
+          <label for="formGroupExampleInput">Set Parent ID</label>
+          <input
+            type="number"
+            class="form-control"
+            id="formGroupExampleInput"
+            placeholder="Set Parent ID"
+            formControlName="parentId"
+          />
+        </div>
+
+        <div class="">
+          <label style="color: red">Parent's Aadhaar</label>
+          <input type="file" class="form-control"
+          (change)="onSelectedFileParentAadhar($event)" />
+        </div>
+
+        <div class="">
+          <label style="color: red">Parent's PAN</label>
+          <input type="file" class="form-control"
+          (change)="onSelectedFileParentPan($event)" />
+        </div>
+
+        <div class="">
+          <label>Parent's Photo</label>
+          <input type="file" class="form-control"
+          (change)="onSelectedFileParentPic($event)" />
+        </div>
+
+        <div class="">
+          <label>Parent's Signature</label>
+          <input type="file" class="form-control"
+          (change)="onSelectedFileParentSign($event)" />
+        </div>
+
+        <div class="">
+          <label>Income Proof</label>
+          <input type="file" class="form-control"
+          (change)="onSelectedFileIncomeProof($event)" />
+        </div>
+
+        <div class="">
+          <label>Guarantor Photo</label>
+          <input type="file" class="form-control"
+          (change)="onSelectedFileGuranterPic($event)" />
+        </div>
+
+        <div class="">
+          <label>Guarantor PAN</label>
+          <input type="file" class="form-control"
+          (change)="onSelectedFileGuranterPan($event)" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="button" class="btn btn-primary ml-4" (click)="clear()">Clear</button>
+      </form>
+    </div>
+  </div>
+</div>

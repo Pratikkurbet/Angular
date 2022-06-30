@@ -1,0 +1,41 @@
+<div class="container" style="margin-left: 150px">
+  <h3 style="margin-left: 250px">Fill Student Information</h3>
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <button class="btn btn-primary" (click)="displayForm1()">Step1</button>
+      <button class="btn btn-primary" (click)="displayForm2()">Step2</button>
+      <button class="btn btn-primary" (click)="displayForm3()">Step3</button>
+      <button class="btn btn-primary" (click)="displayForm4()">Step4</button>
+      <button class="btn btn-primary" (click)="displayForm5()">Step5</button>
+      <button class="btn btn-primary" (click)="displayForm6()">Step6</button>
+      <button class="btn btn-primary" (click)="displayForm7()">Step7</button>
+      <!-- <button class="btn btn-primary" (click)="displayForm8()">
+        View Form
+      </button> -->
+    </div>
+  </div>
+</div>
+<div *ngIf="form1">
+  <app-form1></app-form1>
+</div>
+<div *ngIf="form2">
+  <app-form2></app-form2>
+</div>
+<div *ngIf="form3">
+  <app-form3></app-form3>
+</div>
+<div *ngIf="form4">
+  <app-form4></app-form4>
+</div>
+<div *ngIf="form5">
+  <app-form5></app-form5>
+</div>
+<div *ngIf="form6">
+  <app-form6></app-form6>
+</div>
+<div *ngIf="form7">
+  <app-form7></app-form7>
+</div>
+<div *ngIf="form8">
+  <app-form8></app-form8>
+</div>

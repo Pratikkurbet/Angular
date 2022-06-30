@@ -1,0 +1,307 @@
+<h2
+  class="hoverAnim"
+  style="
+    font-weight: bold;
+    text-align: center;
+    margin-top: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+  "
+>
+  Register Student Here
+</h2>
+<div class="container mt-4 mb-5">
+  <div class="row">
+    <div class="col-md-6">
+      <form [formGroup]="customerRegisterationForm" autocomplete="off">
+        <div class="form-group">
+          <select
+            id="title"
+            name="title"
+            style="width: 81px; height: 25px"
+            tabindex="1"
+            required="required"
+            formControlName="title"
+            [(ngModel)]="customer.title"
+          >
+            <option value="" selected>Title</option>
+            <option value="Mr.">Mr.</option>
+            <option value="Mrs.">Mrs.</option>
+            <option value="Ms.">Ms.</option>
+            <option value="Shri.">Shri.</option>
+            <option value="Dr.">Dr.</option>
+            <option value="CA">CA</option>
+            <option value="Er.">Er.</option>
+            <option value="Prof.">Prof.</option>
+            <option value="Smt">Smt.</option>
+            <option value="Kum.">Kum.</option>
+            <option value="Kumari">Kumari</option>
+            <option value="Master">Master</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Enter First Name</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="First Name"
+            formControlName="firstName"
+            [(ngModel)]="customer.firstName"
+          />
+        </div>
+        <div
+          *ngIf="
+            customerRegisterationForm.controls['firstName'].touched &&
+            customerRegisterationForm.controls['firstName'].invalid
+          "
+        >
+          <span
+            *ngIf="
+              customerRegisterationForm.get('firstName')!.hasError('required')
+            "
+            style="color: red"
+            >FirstName is Required</span
+          >
+        </div>
+
+        <div class="form-group">
+          <label>Enter Middle Name</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Middle Name"
+            formControlName="middleName"
+            [(ngModel)]="customer.middleName"
+          />
+        </div>
+        <div
+          *ngIf="
+            customerRegisterationForm.controls['middleName'].touched &&
+            customerRegisterationForm.controls['middleName'].invalid
+          "
+        >
+          <span
+            *ngIf="
+              customerRegisterationForm.get('middleName')!.hasError('required')
+            "
+            style="color: red"
+            >Middle Name is Required</span
+          >
+        </div>
+
+        <div class="form-group">
+          <label>Enter Last Name</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Last Name"
+            formControlName="lastName"
+            [(ngModel)]="customer.lastName"
+          />
+        </div>
+        <div
+          *ngIf="
+            customerRegisterationForm.controls['lastName'].touched &&
+            customerRegisterationForm.controls['lastName'].invalid
+          "
+        >
+          <span
+            *ngIf="
+              customerRegisterationForm.get('lastName')!.hasError('required')
+            "
+            style="color: red"
+            >Last Name is Required</span
+          >
+        </div>
+
+        <div class="form-group">
+          <label>Enter Mobile Number</label>
+          <input
+            type="number"
+            class="form-control"
+            placeholder="Mobile No"
+            formControlName="mobNo"
+            [(ngModel)]="customer.mobNo"
+          />
+        </div>
+        <div
+          *ngIf="
+            customerRegisterationForm.controls['mobNo'].touched &&
+            customerRegisterationForm.controls['mobNo'].invalid
+          "
+        >
+          <span
+            *ngIf="customerRegisterationForm.get('mobNo')!.hasError('required')"
+            style="color: red"
+            >Mobile no must have 10 digits is Required</span
+          >
+        </div>
+
+        <div class="form-group">
+          <label>Email address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            placeholder="Enter email"
+            formControlName="emailId"
+            [(ngModel)]="customer.emailId"
+          />
+        </div>
+        <div
+          *ngIf="
+            customerRegisterationForm.controls['emailId'].touched &&
+            customerRegisterationForm.controls['emailId'].invalid
+          "
+        >
+          <span
+            *ngIf="
+              customerRegisterationForm.get('emailId')!.hasError('required')
+            "
+            style="color: red"
+            >Email must Required</span
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="exampleInputPassword1"
+            placeholder="Password"
+            formControlName="password"
+            [(ngModel)]="customer.password"
+          />
+        </div>
+        <div
+          *ngIf="
+            customerRegisterationForm.controls['password'].touched &&
+            customerRegisterationForm.controls['password'].invalid
+          "
+        >
+          <span
+            *ngIf="
+              customerRegisterationForm.get('password')!.hasError('required')
+            "
+            style="color: red"
+            >Password Must contain 8 Digits at least 1 UpperCase 1 Lower Case 1
+            Special char 1 integer is Required</span
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputPassword1">Confirm Password</label>
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputPassword1"
+            placeholder="Confirm Password"
+            formControlName="cnfPassword"
+            [(ngModel)]="customer.confirmPassword"
+          />
+        </div>
+
+        <div
+          *ngIf="
+            customerRegisterationForm.controls['cnfPassword'].touched &&
+            customerRegisterationForm.controls['cnfPassword'].invalid
+          "
+        >
+          <span
+            *ngIf="
+              customerRegisterationForm.get('cnfPassword')!.hasError('required')
+            "
+            style="color: red"
+            >Password must Match</span
+          >
+        </div>
+
+        <button
+          type="submit"
+          [disabled]="isValid"
+          (click)="registerCustomer()"
+          class="btn btn-primary"
+        >
+          Submit
+        </button>
+        <button
+          type="button"
+          value="Clear"
+          (click)="clear()"
+          class="btn btn-primary ml-5"
+        >
+          Reset
+        </button>
+        <button
+          type="button"
+          value="Clear"
+          (click)="goToLogin()"
+          class="btn btn-primary ml-5"
+        >
+          Go to Login
+        </button>
+      </form>
+    </div>
+
+    <!-- Side bar -->
+    <div class="col-lg-6 mt-4">
+      <div
+        style="
+          border-style: solid;
+          border-color: #e9a42b;
+          padding: 2%;
+          border-radius: 2%;
+        "
+      >
+        <div>
+          <p style="color: #e9a42b">
+            <strong>Student Information</strong>
+          </p>
+          <p>Welcome to EDQ Portal!</p>
+          <p>
+            EDQ Portal provides single window for Students to access information
+            about various loan schemes provided by banks and make applications
+            for Educational Loans.
+          </p>
+          <p>
+            If you want to apply for education loan on EDQ portal, you must
+            register on portal. Please provide essential details as mentioned in
+            registration form.
+          </p>
+          <p></p>
+          <p style="color: #e9a42b">
+            <strong>Important Instructions</strong>
+          </p>
+          <ul style="list-style-type: circle">
+            <li>
+              Please ensure that the registration details filled in are correct
+            </li>
+            <li>Please enter password in required format</li>
+            <!--  <li>Please move your mouse on '? ' icon for more information </li> -->
+          </ul>
+
+          <p style="color: #e9a42b">
+            <strong>Guidelines for Registering on EDQ Portal </strong>
+          </p>
+          <ul style="list-style-type: circle">
+            <li>
+              Name- Please enter student name as per 10th class marksheet or as
+              per the marksheet attached with your loan application
+            </li>
+            <li>
+              Mobile Number- Enter a valid mobile number. Student can provide
+              mobile number of parent/guardian
+            </li>
+            <li>
+              Email ID- Enter a valid email ID. Email ID will not be allowed to
+              change. All necessary communications will be sent on this email
+              ID.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
