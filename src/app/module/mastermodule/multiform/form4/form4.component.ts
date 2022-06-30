@@ -51,6 +51,7 @@ export class Form4Component implements OnInit {
     this.parentDetailsForm.emailId = this.parentDetailsRegistration.get('emailId').value;
     this.parentDetailsForm.address = this.parentDetailsRegistration.get('address').value;
     this.http.addParentDetails(this.parentDetailsForm).subscribe();
+    window.location.reload();
   }
 
   clear() {

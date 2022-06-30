@@ -11,6 +11,7 @@ import { CommonService } from 'app/sharedservice/common.service';
 export class Form7Component implements OnInit {
 
   constructor(public admissionDetails: FormBuilder, public http: CommonService) { }
+  // tslint:disable-next-line: member-ordering
   admissionDetailsForm: AdmissionDetails = {
     admissionDetailsId: 0,
     univerSityName: '',
@@ -30,6 +31,7 @@ export class Form7Component implements OnInit {
     this.admissionDetailsForm.collegeName = this.admissionDetailsRegistration.get('collegeName').value;
     this.admissionDetailsForm.collegeAddress = this.admissionDetailsRegistration.get('collegeAddress').value;
     this.http.addAdmissionDetails(this.admissionDetailsForm).subscribe();
+    window.location.reload();
   }
 
   clear() {

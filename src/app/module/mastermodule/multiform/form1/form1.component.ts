@@ -51,6 +51,7 @@ export class Form1Component implements OnInit {
     this.StuDetails.mobNo = this.BasicStudentDetailsForm.get('mobNo').value;
     this.StuDetails.emailId = this.BasicStudentDetailsForm.get('emailId').value;
     this.http.postBasicStudentDetails(this.StuDetails).subscribe();
+    window.location.reload();
   }
 
   clear()

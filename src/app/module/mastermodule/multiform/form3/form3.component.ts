@@ -41,6 +41,7 @@ export class Form3Component implements OnInit {
     this.bankDetails.accountNo = this.StuBankDetailsForm.get('accountNo').value;
     this.bankDetails.liablityDetails = this.StuBankDetailsForm.get('liabillityDetails').value;
     this.http.postStuBankDetails(this.bankDetails).subscribe();
+    window.location.reload();
   }
 
   clear() {

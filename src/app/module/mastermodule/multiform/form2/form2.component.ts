@@ -64,6 +64,7 @@ export class Form2Component implements OnInit {
     StudentUploadDocuments.append('signiture', this.Signiture);
     StudentUploadDocuments.append('doc', stuId);
     this.http.postStuDocument(StudentUploadDocuments).subscribe();
+    window.location.reload();
   }
 
   clear() {

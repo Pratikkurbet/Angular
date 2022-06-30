@@ -42,6 +42,7 @@ export class Form6Component implements OnInit {
     this.parentBankDetailsForm.accountNo = this.parentBankDetailsRegistration.get('accountNo').value;
     this.parentBankDetailsForm.liablityDetails = this.parentBankDetailsRegistration.get('liablityDetails').value;
     this.http.addParentBankDetails(this.parentBankDetailsForm).subscribe();
+    window.location.reload();
   }
   clear() {
     this.parentBankDetailsRegistration.reset();

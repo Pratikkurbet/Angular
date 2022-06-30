@@ -63,6 +63,7 @@ export class Form5Component implements OnInit {
     parentUploadDocuments.append('guranterpan', this.guranterPan);
     parentUploadDocuments.append('doc', parentId);
     this.http.postParentDocument(parentUploadDocuments).subscribe();
+    window.location.reload();
   }
   clear() {
     this.parentDocForm.reset();
